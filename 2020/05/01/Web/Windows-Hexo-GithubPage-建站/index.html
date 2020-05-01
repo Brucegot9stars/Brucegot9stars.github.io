@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Windows+Hexo+Github page 建站 | 卖报小行家</title><meta name="description" content="官方网站 Hexo 官方主页   Hexo 安装文档     参考 Hexo 官方文档      手把手教你搭建自己的个人博客   HEXO建站指南   hexo-theme-butterfly安装文档      使用 GitHub Pages 免费搭建博客       hexo超完整的搭建教程，让你拥有一个专属个人博客       在 Ubuntu 14.04 服务器上部署 Hexo 博客"><meta name="keywords" content="教程,Hexo"><meta name="author" content="Baethan"><meta name="copyright" content="Baethan"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Windows+Hexo+Github page 建站"><meta name="twitter:description" content="官方网站 Hexo 官方主页   Hexo 安装文档     参考 Hexo 官方文档      手把手教你搭建自己的个人博客   HEXO建站指南   hexo-theme-butterfly安装文档      使用 GitHub Pages 免费搭建博客       hexo超完整的搭建教程，让你拥有一个专属个人博客       在 Ubuntu 14.04 服务器上部署 Hexo 博客"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Windows+Hexo+Github page 建站"><meta property="og:url" content="https://saitamata.github.io/2020/05/01/Web/Windows-Hexo-GithubPage-%E5%BB%BA%E7%AB%99/"><meta property="og:site_name" content="卖报小行家"><meta property="og:description" content="官方网站 Hexo 官方主页   Hexo 安装文档     参考 Hexo 官方文档      手把手教你搭建自己的个人博客   HEXO建站指南   hexo-theme-butterfly安装文档      使用 GitHub Pages 免费搭建博客       hexo超完整的搭建教程，让你拥有一个专属个人博客       在 Ubuntu 14.04 服务器上部署 Hexo 博客"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-cover.jpg"><meta property="article:published_time" content="2020-05-01T03:22:33.000Z"><meta property="article:modified_time" content="2020-05-01T09:21:01.978Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://saitamata.github.io/2020/05/01/Web/Windows-Hexo-GithubPage-%E5%BB%BA%E7%AB%99/"><link rel="next" title="CentOS7 部署文件服务器" href="https://saitamata.github.io/2019/09/09/Web/CentOS7%20%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404_1.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">6</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#官方网站"><span class="toc-number">1.</span> <span class="toc-text">官方网站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署思路"><span class="toc-number">3.</span> <span class="toc-text">部署思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装环境"><span class="toc-number">4.</span> <span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本配置"><span class="toc-number">5.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于主题和主题的配置"><span class="toc-number">6.</span> <span class="toc-text">关于主题和主题的配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开始写作"><span class="toc-number">7.</span> <span class="toc-text">开始写作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置-Categories"><span class="toc-number">8.</span> <span class="toc-text">设置 Categories</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加-about-页面"><span class="toc-number">9.</span> <span class="toc-text">添加 about 页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加友情连接"><span class="toc-number">10.</span> <span class="toc-text">添加友情连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-number">11.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发布到-GitHub-Pages-上"><span class="toc-number">12.</span> <span class="toc-text">发布到 GitHub Pages 上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FAQ"><span class="toc-number">13.</span> <span class="toc-text">FAQ</span></a></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-cover.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">卖报小行家</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Windows+Hexo+Github page 建站</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-05-01 11:22:33"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-05-01</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-05-01 17:21:01"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-05-01</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h4 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h4><ul>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 官方主页</a>  </li>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 安装文档</a>  </li>
+</ul>
+<hr>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 官方文档</a>     </li>
+<li><a href="https://blog.csdn.net/gsl9d1p04f6x2ts3c9/article/details/81024330" target="_blank" rel="noopener">手把手教你搭建自己的个人博客</a>  </li>
+<li><a href="https://www.jianshu.com/p/a2c6e49ca134" target="_blank" rel="noopener">HEXO建站指南</a>  </li>
+<li><a href="https://jerryc.me/posts/21cfbf15/#%E6%87%89%E7%94%A8%E4%B8%BB%E9%A1%8C" target="_blank" rel="noopener">hexo-theme-butterfly安装文档</a>     </li>
+<li><a href="https://zhuanlan.zhihu.com/p/22098309?utm_source=wechat_session&utm_medium=social&utm_oi=567319975606546432" target="_blank" rel="noopener">使用 GitHub Pages 免费搭建博客</a>      </li>
+<li><a href="https://zhuanlan.zhihu.com/p/44213627?utm_source=wechat_session&utm_medium=social&utm_oi=567319975606546432" target="_blank" rel="noopener">hexo超完整的搭建教程，让你拥有一个专属个人博客</a>      </li>
+<li><a href="https://cloud.tencent.com/developer/article/1004587" target="_blank" rel="noopener">在 Ubuntu 14.04 服务器上部署 Hexo 博客</a>      </li>
+<li><a href="https://zhuanlan.zhihu.com/p/47843654?utm_source=wechat_session&utm_medium=social&utm_oi=567319975606546432" target="_blank" rel="noopener">Hexo个人博客搭建+主题优化+文章加密访问</a>      </li>
+<li><a href="https://zhuanlan.zhihu.com/p/37132991?utm_source=wechat_session&utm_medium=social&utm_oi=567319975606546432" target="_blank" rel="noopener">手把手教你用Docker搭建Hexo博客-Nginx https证书配置</a>    </li>
+</ul>
+<hr>
+<h4 id="部署思路"><a href="#部署思路" class="headerlink" title="部署思路"></a>部署思路</h4><ul>
+<li>在本地 windows 上部署 HEXO 项目目录  </li>
+<li>部署到 Github page   </li>
+</ul>
+<hr>
+<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><ul>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装 nodejs</a>  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 Node.js 官方安装程序时，请确保勾选 Add to PATH 选项（默认已勾选）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Hexo</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo</span><br><span class="line">    npm install hexo-cli hexo-server -g </span><br><span class="line">模块解释：</span><br><span class="line">    hexo-cli    是 Hexo 的命令行工具，可用于快速新建、发布、部署博客；</span><br><span class="line">    hexo-server 是 Hexo 的内建服务器，可用于部署前的预览和测试。-g 选项，表示全局安装。我们这里采用 nginx 托管。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/commands" target="_blank" rel="noopener">Hexo 常用指令</a></p>
+</li>
+</ul>
+<hr>
+<h4 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h4><ul>
+<li><p>在本地创建并初始化一个 HEXO 项目目录</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br><span class="line"></span><br><span class="line">如: 目录为 blog  </span><br><span class="line">    $ hexo init blog</span><br><span class="line">    $ cd .&#x2F;blog</span><br><span class="line">    $ npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个项目的目录大致结构     </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">hexo init test</span><br><span class="line">tree test -L 2（该命令只适用于 Linux, Windows 上无法指定目录深度）</span><br><span class="line">test</span><br><span class="line">├── _config.yml</span><br><span class="line">├── node_modules</span><br><span class="line">├── package.json</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── scaffolds</span><br><span class="line">│   ├── draft.md</span><br><span class="line">│   ├── page.md</span><br><span class="line">│   └── post.md</span><br><span class="line">├── source</span><br><span class="line">│   └── _data</span><br><span class="line">│   └── _drafts</span><br><span class="line">│   └── _posts</span><br><span class="line">│   └── about</span><br><span class="line">│   └── categories</span><br><span class="line">│   └── link</span><br><span class="line">└── themes</span><br><span class="line">    ├── hexo-theme-butterfly</span><br><span class="line">    └── landscape</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>目录解释   </p>
+<table>
+<thead>
+<tr>
+<th align="center">文件或目录</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">_config.yml</a></td>
+<td align="left">网站的 配置 信息，您可以在此配置大部分的参数。</td>
+</tr>
+<tr>
+<td align="center">package.json</td>
+<td align="left">应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。</td>
+</tr>
+<tr>
+<td align="center">scaffolds</td>
+<td align="left">模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。又如：hexo new photo “My Gallery”，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章</td>
+</tr>
+<tr>
+<td align="center"><a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">source</a></td>
+<td align="left">资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，（开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。）Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</td>
+</tr>
+<tr>
+<td align="center">_drafts</td>
+<td align="left">放置未发布的草稿的地方</td>
+</tr>
+<tr>
+<td align="center">_posts</td>
+<td align="left">放发布的 markdown 文章的地方</td>
+</tr>
+<tr>
+<td align="center">themes</td>
+<td align="left">主题 文件夹。Hexo 会根据主题来渲染生成静态页面。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>博客文章，页面内容存在于 <code>test/source</code> 目录下  </p>
+</li>
+<li><p>需要修改配置的地方  </p>
+<ul>
+<li><p>项目主目录下的 <code>_config.yml</code>  </p>
+<ul>
+<li>可以配置网站主页的标题和副标题    </li>
+<li>URL  </li>
+<li>作者名      </li>
+<li>默认语言      </li>
+<li>时区，日期格式      </li>
+<li>文章的目录，标签的目录， 结构目录， 分类目录  </li>
+<li>使用的主题     </li>
+<li>部署的位置：如gitpage, 或者自己搭建的服务器   </li>
+<li>等等   </li>
+</ul>
+</li>
+<li><p>主题目录下的 <code>_config.yml</code>   </p>
+<ul>
+<li>网页图标在 <code>favicon</code> 设置</li>
+<li>页面 github 连接在 <code>social: fa fa-github</code> 设置  </li>
+<li>作者的头像在 <code>avatar</code> 设置 </li>
+<li>主页的背景图片在 <code>top_img</code> 处设置 </li>
+<li>以及其他页面背景相关的图片也在该文件的设置，不一一列举，可以根据主题作者的配置做适当的修改即可   </li>
+<li>配置 gitalk 相关参数  </li>
+<li>Flink 处设置相关的个人信息和友情链接  </li>
+<li>贴赞助二维码等等    </li>
+</ul>
+</li>
+<li><p>主题用到的相关图片资源存在 <code>themes\hexo-theme-butterfly\source\img</code> 目录下   </p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="关于主题和主题的配置"><a href="#关于主题和主题的配置" class="headerlink" title="关于主题和主题的配置"></a><a href="https://jerryc.me/categories/Butterfly%E6%96%87%E6%AA%94/" target="_blank" rel="noopener">关于主题和主题的配置</a></h4><ul>
+<li><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">推荐使用 butterfly</a> , 目前个人见过最棒的 Hexo 主题之一  <ul>
+<li><a href="https://jerryc.me/" target="_blank" rel="noopener">主题作者主页</a>  </li>
+<li><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">主题仓库</a>  </li>
+<li><a href="https://jerryc.me/posts/21cfbf15/#%E5%BF%AB%E9%80%9F%E9%96%8B%E5%A7%8B" target="_blank" rel="noopener">主题安装文档1</a>    </li>
+<li><a href="https://jerryc.me/posts/dc584b87/#Page-Front-matter" target="_blank" rel="noopener">主题安装文档2</a>  </li>
+<li><a href="https://jerryc.me/categories/Butterfly%E6%96%87%E6%AA%94/" target="_blank" rel="noopener">其他更多文章</a>  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">开始写作</a></h4><ul>
+<li><a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">文章布局模板</a>  </li>
+</ul>
+<ol>
+<li><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">新建博文草稿</a>    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft first-draft  </span><br><span class="line">    draft是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以</span><br><span class="line">hexo new [layout] &lt;title&gt;  </span><br><span class="line">    [layout] 博客文章的页面布局模板, 若不填写，默认为 post。可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。</span><br><span class="line">    &lt;title&gt;  博客文章， 必须有   </span><br><span class="line">布局（Layout）</span><br><span class="line">    Hexo 有三种默认布局：post、page 和 draft。</span><br><span class="line">    在创建者三种不同类型的文件时，它们将会被保存到不同的路径；</span><br><span class="line">    而您自定义的其他布局和 post 相同，新建的文件都将储存到 source&#x2F;_posts 文件夹。</span><br></pre></td></tr></table></figure></li>
+<li><p>以 markdown 格式编辑 first-draft.md 文档  </p>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/server" target="_blank" rel="noopener">预览草稿</a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --draft</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布草稿到 post  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish draft first-draft</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/generating" target="_blank" rel="noopener">生成静态文件: <code>hexo g</code></a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">生成静态文件，存放到：hexo_blog&#x2F;public 目录下  </span><br><span class="line"></span><br><span class="line">hexo generate --watch</span><br><span class="line">Hexo 能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的 SHA1 checksum，只有变动的文件才会写入。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">部署到远端服务器上: <code>hexo d</code></a>   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">部署前配置  hexo_blog&#x2F;_config.yml</span><br><span class="line"></span><br><span class="line">远程仓库：</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repo: git@github.com:Saitamata&#x2F;Saitamata.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+<li><p><a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">关于一键部署</a>   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多种部署方案</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="设置-Categories"><a href="#设置-Categories" class="headerlink" title="设置 Categories"></a>设置 Categories</h4><ul>
+<li><p>确认站点配置文件 <code>hexo_blog/_config.yml</code> 打开了  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">category_dir: categories</span><br></pre></td></tr></table></figure></li>
+<li><p>确认主题配置文件 <code>hexo_blog/theme/Butterfly/_config.yml</code> 打开了  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Main menu navigation</span><br><span class="line"># format: xxx: &#x2F;xxx&#x2F;||icon</span><br><span class="line"># ---------------</span><br><span class="line">menu:</span><br><span class="line">Home: &#x2F;||fa fa-home</span><br><span class="line">Archives: &#x2F;archives&#x2F;||fa fa-archive</span><br><span class="line">Tags: &#x2F;tags&#x2F;||fa fa-tags</span><br><span class="line">Categories: &#x2F;categories&#x2F;||fa fa-folder-open  # 后面指定了图标</span><br><span class="line">Link: &#x2F;link&#x2F;||fa fa-link</span><br><span class="line">About: &#x2F;about&#x2F;||fa fa-heart</span><br></pre></td></tr></table></figure></li>
+<li><p>新建 <code>categories</code> 文件  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">此时会在source目录下生成 categories&#x2F;index.md 文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>categories/index.md</code>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-08-16 16:20:05</span><br><span class="line">type: &quot;categories&quot;     &lt;!-- 必须 --&gt;</span><br><span class="line">comments: false       &lt;!-- 必须 --&gt;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为文章添加 <code>categories</code>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: CentOS7 基于 Hexo 建站  </span><br><span class="line">date: 2019-08-15 15:18:36  </span><br><span class="line">tags: </span><br><span class="line">  - Hexo</span><br><span class="line">  - Blog  </span><br><span class="line">categories: </span><br><span class="line">  - Web</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li><p>可以在 <code>hexo_blog\source\_posts\</code> 下创建与 <code>categories</code> 对应的目录  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo_blog\source\_posts\ 下文章的 &#96;md&#96; 文件可以存放在对应的目录中分类，如：</span><br><span class="line"></span><br><span class="line">创建：hexo_blog\source\_posts\Web，并把 &#39;Centos7基于Hexo建站.md&#39; 文件放在 Web 目录下</span><br></pre></td></tr></table></figure>
+
+<hr>
+</li>
+</ul>
+<h4 id="添加-about-页面"><a href="#添加-about-页面" class="headerlink" title="添加 about 页面"></a>添加 <code>about</code> 页面</h4><ul>
+<li><p>hexo new page “about”  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: E:\...\hexo_blog\source\about\index.md</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>about\index.md</code>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2019-08-16 16:30:59</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&gt; Baethan 的个人学习分享小天地</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="添加友情连接"><a href="#添加友情连接" class="headerlink" title="添加友情连接"></a>添加友情连接</h4><ul>
+<li><p>创建友情链接页面  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 前往你的 Hexo 博客的根目录, 打开 MINGW64  </span><br><span class="line">2. 输入 hexo new page link</span><br><span class="line">3. 你会找到source&#x2F;link&#x2F;index.md这个文件</span><br><span class="line">4. 修改这个文件：</span><br><span class="line">   ---</span><br><span class="line">   title: Link</span><br><span class="line">   date: 2019-08-16 17:11:23</span><br><span class="line">   type: &quot;link&quot;</span><br><span class="line">   ---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>友情链接添加<br> 在 Hexo 博客目录中的 source/_data(没有_data，则手动创建)，创建一个文件 link.yml  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class:</span><br><span class="line">class_name: 友情链接</span><br><span class="line">link_list:</span><br><span class="line">  1:</span><br><span class="line">    name: xxx</span><br><span class="line">    link: https:&#x2F;&#x2F;blog.xxx.com</span><br><span class="line">    avatar: https:&#x2F;&#x2F;cdn.xxxxx.top&#x2F;avatar.png</span><br><span class="line">    descr: xxxxxxx</span><br><span class="line">  2:</span><br><span class="line">    name: xxxxxx</span><br><span class="line">    link: https:&#x2F;&#x2F;www.xxxxxxcn&#x2F;</span><br><span class="line">    avatar: https:&#x2F;&#x2F;xxxxx&#x2F;avatar.png</span><br><span class="line">    descr: xxxxxxx  </span><br><span class="line"></span><br><span class="line">class2:</span><br><span class="line"> class_name: 链接无效</span><br><span class="line"> link_list:</span><br><span class="line">   1:</span><br><span class="line">     name: 梦xxx</span><br><span class="line">     link: https:&#x2F;&#x2F;blog.xxx.com</span><br><span class="line">     avatar: https:&#x2F;&#x2F;xxxx&#x2F;avatar.png</span><br><span class="line">     descr: xxxx</span><br><span class="line">   2:</span><br><span class="line">     name: xx</span><br><span class="line">     link: https:&#x2F;&#x2F;www.axxxx.cn&#x2F;</span><br><span class="line">     avatar: https:&#x2F;&#x2F;x</span><br><span class="line">     descr: xx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Link 页面个人信息配置<br> <code>theme/Butterfly/_config.yml</code> 中 <code>Flink:</code> 后</p>
+</li>
+<li><p>设置本地搜索  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm install  hexo-generator-search --save</span><br><span class="line"></span><br><span class="line">配置：theme&#x2F;Butterfly&#x2F;_config.yml:</span><br><span class="line">  local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  labels:</span><br><span class="line">  input_placeholder: Search for Posts</span><br><span class="line">  hits_empty: &quot;We didn&#39;t find any results for the search: $&#123;query&#125;&quot; # if there are no result</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li><p>关于 yaml 配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意： </span><br><span class="line">键值对的冒号后面要有空格  </span><br><span class="line">采用空格缩进</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Markdwon 格式特别注意（巨坑）   </p>
+<ol>
+<li>使用 ``` … ``` 标示代码块，在第二个 ``` 后不要有空格，否则会导致代码块渲染混乱  </li>
+<li>要输出有特殊意义的字符，使用转义字符 \</li>
+</ol>
+</li>
+<li><p>关于buttferfly 的很多配置在 clone 下来的配置中都没有， 多参考，研究摸索    </p>
+</li>
+</ul>
+<hr>
+<h4 id="发布到-GitHub-Pages-上"><a href="#发布到-GitHub-Pages-上" class="headerlink" title="发布到 GitHub Pages 上"></a><a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">发布到 GitHub Pages 上</a></h4><ul>
+<li>安装相关的包  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h4><ul>
+<li>访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">extends includes&#x2F;layout.pug block content include .&#x2F;includes&#x2F;mixins&#x2F;post-ui.pug #recent-posts.recent-posts +postUI include includes&#x2F;pagination.pug</span><br><span class="line">缺乏渲染器</span><br><span class="line">解决：</span><br><span class="line">        npm install hexo-renderer-pug hexo-renderer-stylus --save or yarn add hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Baethan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://saitamata.github.io/2020/05/01/Web/Windows-Hexo-GithubPage-%E5%BB%BA%E7%AB%99/">https://saitamata.github.io/2020/05/01/Web/Windows-Hexo-GithubPage-%E5%BB%BA%E7%AB%99/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://saitamata.github.io" target="_blank">卖报小行家</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-cover.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2019/09/09/Web/CentOS7%20%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"><img class="next_cover lazyload" data-src="https://raw.githubusercontent.com/Saitamata/BlogPictureBed/master/Web/vsftp.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CentOS7 部署文件服务器</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/08/15/Web/CentOS7 基于Hexo建站/" title="CentOS7 基于 Hexo 建站"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-cover.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-08-15</div><div class="relatedPosts_title">CentOS7 基于 Hexo 建站</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/09/Web/CentOS7 部署文件服务器/" title="CentOS7 部署文件服务器"><img class="relatedPosts_cover lazyload"data-src="https://raw.githubusercontent.com/Saitamata/BlogPictureBed/master/Web/vsftp.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-09</div><div class="relatedPosts_title">CentOS7 部署文件服务器</div></div></a></div><div class="relatedPosts_item"><a href="/2019/08/16/笔记/子弹笔记1/" title="子弹笔记学习概要一"><img class="relatedPosts_cover lazyload"data-src="https://raw.githubusercontent.com/Saitamata/BlogPictureBed/master/Notes/bulletnote01/bulletcover.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-08-16</div><div class="relatedPosts_title">子弹笔记学习概要一</div></div></a></div><div class="relatedPosts_item"><a href="/2019/08/17/笔记/子弹笔记4/" title="子弹笔记学习概要四"><img class="relatedPosts_cover lazyload"data-src="https://raw.githubusercontent.com/Saitamata/BlogPictureBed/master/Notes/bulletnote01/bulletcover.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-08-17</div><div class="relatedPosts_title">子弹笔记学习概要四</div></div></a></div><div class="relatedPosts_item"><a href="/2019/08/17/笔记/子弹笔记3/" title="子弹笔记学习概要三"><img class="relatedPosts_cover lazyload"data-src="https://raw.githubusercontent.com/Saitamata/BlogPictureBed/master/Notes/bulletnote01/bulletcover.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-08-17</div><div class="relatedPosts_title">子弹笔记学习概要三</div></div></a></div><div class="relatedPosts_item"><a href="/2019/08/17/笔记/子弹笔记2/" title="子弹笔记学习概要二"><img class="relatedPosts_cover lazyload"data-src="https://raw.githubusercontent.com/Saitamata/BlogPictureBed/master/Notes/bulletnote01/bulletcover.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-08-17</div><div class="relatedPosts_title">子弹笔记学习概要二</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '958bce96f29b6c1a4308',
+  clientSecret: '8bd6c6f3d8c9b5f56623dddc3070b265debea954',
+  repo: 'Saitamata.github.io',
+  owner: 'Saitamata',
+  admin: ['Saitamata'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By Baethan</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
