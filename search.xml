@@ -4,18 +4,45 @@
   
     
     <entry>
+      <title>补码&amp;反码</title>
+      <link href="/2020/05/09/Basics/Code/%E8%A1%A5%E7%A0%81&amp;%E5%8F%8D%E7%A0%81/"/>
+      <url>/2020/05/09/Basics/Code/%E8%A1%A5%E7%A0%81&amp;%E5%8F%8D%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><ul><li><p>计算机中的符号数有三种表示方法：</p><ul><li>原码    </li><li>反码    </li><li>补码    </li></ul></li><li><p>三种表示方法均有 <code>符号位</code>和 <code>数值位</code> 两部分  </p><ul><li>符号位:<ul><li>0 表示 “正”</li><li>1 表示 “负”，</li></ul></li><li>数值位: 三种表示方法各不相同。</li></ul></li><li><p>在计算机系统中，数值一律用补码来表示和存储。原因:</p><ul><li>使用补码，可以将符号位和数值域统一处理</li><li>加法和减法也可以统一处理  </li><li>补码与原码相互转换，其运算过程是相同的，不需要额外的硬件电路  </li></ul></li></ul><hr><h6 id="补码求法"><a href="#补码求法" class="headerlink" title="补码求法"></a>补码求法</h6><ul><li><p>正数的补码 = 原码 = 反码  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">正数来说，其二进制原码，反码，补码均为相同的，为原码的形式</span><br></pre></td></tr></table></figure></li><li><p>负数的补码 = 原码符号位不变, 数值位按位取反后+1 </p></li></ul><hr><h6 id="辅助概念"><a href="#辅助概念" class="headerlink" title="辅助概念"></a>辅助概念</h6><ul><li>模:  <ul><li>“模” 指一个计量系统的计数范围。如时钟的计量范围是0～11，模=12。  </li><li>n 位的计算机计量范围是 0～2^(n)-1，模=2^(n)。  </li><li>“模” 实质上是计量器产生“溢出”的量，它的值在计量器上表示不出来，计量器上只能表示出模的余数。  </li><li>任何有模的计量器，均可化减法为加法运算。</li></ul></li><li>模的举例理解：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如：假设当前时针指向10点，而准确时间是6点，调整时间可有以下两种拨法：</span><br><span class="line">          一种是倒拨4小时，即：10-4&#x3D;6；</span><br><span class="line">         另一种是顺拨8小时：10+8&#x3D;12+6&#x3D;6</span><br><span class="line">在以12模的系统中，加8和减4效果是一样的，因此凡是减4运算，都可以用加8来代替。对“模”而言，8和4互为补数。</span><br><span class="line">实际上以12模的系统中，11和1，10和2，9和3，7和5，6和6都有这个特性。共同的特点是两者相加等于模。</span><br></pre></td></tr></table></figure></li></ul><hr><h6 id="补码特性"><a href="#补码特性" class="headerlink" title="补码特性"></a>补码特性</h6><ul><li><p>一个负整数（或原码）与其补数（或补码）相加，和为模。  </p></li><li><p>对一个整数的补码再求补码，等于该整数自身。</p></li><li><p>补码的正零与负零表示方法相同。数0的补码表示是唯一的:</p><ul><li>[+0]补 = [+0]反=[+0]原=00000000   </li><li>[ -0]补 = 00000000   </li></ul></li><li><p>正整数的补码是其二进制表示，与原码相同。</p></li></ul><hr><h6 id="代数加减运算"><a href="#代数加减运算" class="headerlink" title="代数加减运算"></a>代数加减运算</h6><ul><li><p>[X+Y]补 = [X]补 + [Y]补    </p></li><li><p>[X-Y]补 = [X]补 - [Y]补 = [X]补 + [-Y]补  </p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basics </category>
+          
+          <category> Code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>代理服务器&amp;反向代理服务器</title>
-      <link href="/2020/05/04/Internet/Basics/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8&amp;%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-      <url>/2020/05/04/Internet/Basics/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8&amp;%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <link href="/2020/05/04/Basics/Internet/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8&amp;%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <url>/2020/05/04/Basics/Internet/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8&amp;%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
       
         <content type="html"><![CDATA[<h5 id="代理服务器-amp-反向代理服务器"><a href="#代理服务器-amp-反向代理服务器" class="headerlink" title="代理服务器&amp;反向代理服务器"></a><a href="https://blog.csdn.net/wuliuwei1234/article/details/80803069" target="_blank" rel="noopener">代理服务器&amp;反向代理服务器</a></h5><hr><p>参考：</p><ol><li><a href="https://www.cnblogs.com/lxlx1798/p/10417676.html" target="_blank" rel="noopener">关于代理服务器的原理及用法</a>    </li><li><a href="https://blog.csdn.net/wuliuwei1234/article/details/80803069" target="_blank" rel="noopener">代理服务器&amp;反向代理服务器</a>      </li></ol><h6 id="代理服务器-Proxy-Server"><a href="#代理服务器-Proxy-Server" class="headerlink" title="代理服务器(Proxy Server)"></a>代理服务器(Proxy Server)</h6><ul><li><p>功能</p><ul><li>代理<strong>网络用户</strong>去取得网络信息。形象地说，它是网络信息的中转站，是个人网络和Internet服务商之间的中间代理机构，<br>负责转发合法的网络信息，对转发进行控制和登记 <div class="note info">            <p>一般情况下，使用网络浏览器直接去链接其它Internet站点并取得网络信息时，须送出请求信号来得到应答，然后对方再把信<br>息传送回来。代理服务器是介于浏览器和Web服务器之间的一台服务器，有了它之后，浏览器不是直接到Web服务器去取回<br>网页而是向代理服务器发出请求，请求信号会先送到代理服务器，由代理服务器来取回浏览器所需要的信息并传送给你的浏<br>览器。</p>          </div><img src="/" class="lazyload" data-src="https://s1.ax1x.com/2020/05/04/Y9bkHe.png"  alt="proxy"></li></ul></li><li><p>作用：</p><ul><li>对进入内部网络的Internet信息实施监控和过滤。     </li><li>同时也可以解决许多单位连接Internet引起IP地址不足的问题。  </li><li>缓存功能，可以降低费用，提高速度  </li></ul></li><li><p>主要分类  </p><ul><li>应用层代理：工作在TCP/IP模型的应用层之上，它只能用于支持代理的应用层协议（如HTTP，FTP）。它提供的控制最多，但是不灵活 <ul><li>基于HTTP协议的代理服务器   </li></ul></li><li>传输层代理：如果协议不支持图2所示的代理服务器实现模型（如SMTP和POP），那就只能在应用层以下代理，也即传输层代理  </li><li>SOCKS代理：需要改变客户端的IP栈，即SOCKS代理。它是可用的最强大、最灵活的代理标准协议。  <ul><li>Socks是一个客户/服务器环境的代理协议。它包括两个主要的组件，Socks服务器和Socks客户库。</li><li>Socks服务器实现在应用层，Socks客户库实现在客户的应用层与传输层之间。一个代理服务器为客户机与应用服务器建立连接，代理<br>服务器在客户与应用服务器之间中转数据，从应用服务器的角度来看，代理服务器是客户。 </li></ul></li></ul></li></ul><hr><h6 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86" target="_blank" rel="noopener">反向代理</a></h6><ul><li><p>定义 </p><ul><li>反向代理服务器来接受客户端的网络访问连接请求，然后服务器将请求有策略的转发给网络中实际工作的业务服务器，并将从业务服务<br>器处理的结果，返回给网络上发起连接请求的客户端。<br><img src="/" class="lazyload" data-src="https://s1.ax1x.com/2020/05/04/Y9bEAH.png"  alt="proxy"></li></ul></li><li><p>前向代理与反向代理     </p><ul><li><p>前向代理作为客户端的代理，将从互联网上获取的资源返回给一个或多个的客户端，服务端（如Web服务器）只知道代理的IP地址而不<br>知道客户端的IP地址；客户端借由前向代理可以间接访问很多不同互联网服务器（簇）的资源。  </p></li><li><p>反向代理是作为服务器端（如Web服务器）的代理使用，而不是客户端。反向代理是供很多客户端都通过它间接访问不同后端服务器上<br>的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自于这个反向代理服务器。    </p></li></ul></li><li><p>作用  </p><ul><li>提高了内部服务器的安全  </li><li>加快了对内部服务器的访问速度  </li><li>节约了有限的IP资源</li></ul></li><li><p>配置方法  </p><ul><li>Secure client to proxy  </li><li>Secure proxy to content server  </li><li>Secure client to proxy and secure proxy to content server  </li></ul></li></ul><hr><h6 id="前向代理和反向代理的区别"><a href="#前向代理和反向代理的区别" class="headerlink" title="前向代理和反向代理的区别"></a><a href="https://blog.csdn.net/wuliuwei1234/article/details/80803069" target="_blank" rel="noopener">前向代理和反向代理的区别</a></h6><ul><li><p>位置不同</p><ul><li>正向代理，架设在客户机和目标主机之间； </li><li>反向代理，架设在服务器端；  </li></ul></li><li><p>代理对象不同 </p><ul><li>正向代理，代理客户端，服务端不知道实际发起请求的客户端；   </li><li>反向代理，代理服务端，客户端不知道实际提供服务的服务端；   </li></ul></li><li><p>图示(图片来自于网络)<br><img src="/" class="lazyload" data-src="https://s1.ax1x.com/2020/05/04/Y9TT5n.png"  alt="proxy"></p></li></ul>]]></content>
       
       
       <categories>
           
-          <category> Internet </category>
-          
           <category> Basics </category>
+          
+          <category> Internet </category>
           
       </categories>
       
